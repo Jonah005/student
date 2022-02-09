@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>Crud Application</title>
+    <link href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+<link rel="shortcut icon" href="{{url_for('static', filename = 'teacher.png' )}}">
+</head>
+<body>
+<div class="container">
+    <div color="yellow" class="well text-center">
+        <h1>Smart Grocer</h1>
+    </div>
+</div>
+
+<link href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <h2>Customer Master information </h2>
+
+
+    </div>
+
+            <table class="table table-striped">
+                <tr>
+
+              <th>Name</th>
+              <th>House no.</th>
+              <th>Building</th>
+              <th>Address</th>
+              <th>City</th>
+              <th>Land Phone</th>
+              <th>Mobile Phone</th>
+
+        </tr>
+                {% for row in recources %}
+                <tr>
+                    <td>{{row.0}}</td>
+                    <td>{{row.1}}</td>
+                    <td>{{row.2}}</td>
+                    <td>{{row.3}}</td>
+                    <td>{{row.4}}</td>
+                    <td>{{row.5}}</td>
+                    <td>{{row.6}}</td>
+
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+
+        </div>
+
+  {% include "footer.html" %}
+
+
+{% endblock %}
+<script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+<script type="text/javascript" src="{{url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
